@@ -1,13 +1,16 @@
 import powerImage from './assets/powered.png';
 import styles from './App.module.css';
 import { useState } from 'react';
+
+import { calculateImc, levels } from './helpers/imc';
+
 const App = () => {
 
-  const [heihtField, setHeihtField] = useState<number>(0);
+  const [heightField, setHeihtField] = useState<number>(0);
   const [weightField, setWeightField] = useState<number>(0);
 
   const handleCalculeButton = () => {
-    if(heihtField && weightField){
+    if(heightField && weightField){
 
     }else{
       alert('Digite todos os campos.');
@@ -30,7 +33,7 @@ const App = () => {
           <input 
             type="number"
             placeholder='Digite sua altura. Ex 1.5 (em métros)'
-            value={heihtField > 0 ? heihtField : ''}
+            value={heightField > 0 ? heightField : ''}
             onChange={e => setHeihtField(parseFloat(e.target.value))}
           />
           <input 
