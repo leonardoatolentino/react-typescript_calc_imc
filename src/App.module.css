@@ -4,6 +4,9 @@
 body{
   font-family: Arial, Helvetica, sans-serif;
 }
+.main {
+  padding-bottom: 50px;
+}
 .headerContainer{
   max-width: 900px;
   margin: 40px auto;
@@ -37,7 +40,9 @@ body{
   margin-bottom: 16px;
   font-size: 14px;
   outline: 0;
-
+}
+.container .leftSide input:disabled{
+  opacity: .5;
 }
 .container .leftSide button{
   background-color: #227c9d;
@@ -51,14 +56,70 @@ body{
   transition: all ease .3s;
 
 }
-
 .container .leftSide button:hover{
   opacity: .8;
 }
-
-
+.container .leftSide button:disabled{
+  opacity: .5;
+}
 .container .rightSide{
   margin-left: 40px;
   flex: 1;
-  
+  display: flex;
+}
+.container .rightSide .grid {
+  flex: 1;
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr );
+  gap: 20px;
+}
+.container .rightSide .rigthBig{
+  flex: 1;
+  display: flex;
+}
+.container .rightSide .rigthArrow {
+  position: absolute;
+  background-color: #227c9d;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: -35px;
+  margin-top: 145px;
+  transition: all ease .3s;
+}
+.container .rightSide .rigthArrow:hover{
+  opacity: .9;
+}
+
+@media (max-width: 810px){
+  header {
+    padding: 0 20px;
+  }
+  .container {
+    padding: 0 20px;
+    flex-direction: column;
+  }
+  .container .leftSide{
+    margin-right: 0;
+  }
+  .container .rightSide{
+    margin-left: 0;
+    margin-top: 50px;
+  }
+  .container .rightSide .rigthArrow{
+    margin-left: 0;
+    margin-top: 0 ;
+    border-radius: 10px;
+  }
+
+}
+@media (max-width: 430px){
+  .container .rightSide .grid{
+    grid-template-columns: 1fr;
+  }
+
 }
